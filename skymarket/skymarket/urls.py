@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 # TODO здесь необходимо подклюючит нужные нам urls к проекту
 
 urlpatterns = [
+    path("", include("users.urls")),
     path("api/admin/", admin.site.urls),
     path("api/redoc-tasks/", include("redoc.urls")),
 ]
