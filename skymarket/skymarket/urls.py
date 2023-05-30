@@ -10,6 +10,7 @@ urlpatterns = [
     path("api/token/", TokenObtainPairView.as_view(), name='token_obtain'),
     path("api/token/refresh/", TokenRefreshView.as_view(), name='token_obtain'),
     path("", include("users.urls")),
+    path("", include("ads.urls")),
     path("api/admin/", admin.site.urls),
     path("api/redoc-tasks/", include("redoc.urls")),
 ]
