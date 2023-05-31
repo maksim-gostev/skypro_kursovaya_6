@@ -18,6 +18,7 @@ djangorestframework-simplejwt==4.8.0
 djoser==2.1.0
 drf-nested-routers==0.93.4
 drf-yasg==1.20.0
+drf_spectacular==0.26.2
 idna==3.3
 inflection==0.5.1
 isort==5.10.1
