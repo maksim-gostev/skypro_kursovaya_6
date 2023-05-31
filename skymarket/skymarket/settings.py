@@ -48,14 +48,13 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
     "corsheaders",
-    "users",
     "ads",
+    "users",
     "redoc",
     "drf_spectacular",
 ]
 
 AUTH_USER_MODEL = "users.User"
-
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -101,7 +100,6 @@ REST_FRAMEWORK = {
 DJOSER = {
     'SERIALIZERS': {
         'user_create': 'users.serializers.UserRegistrationSerializer',
-        'user': 'users.serializers.UserCurrentSerializer',
         'current_user': 'users.serializers.UserCurrentSerializer',
     },
     'LOGIN_FIELD': 'email',
@@ -116,15 +114,20 @@ DJOSER = {
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 # TODO здесь необходимо настроить подключение к БД
+# DATABASES = {
+#     'default':{
+#         'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.postgresql'),
+#         'NAME': os.getenv('DB_NAME', 'skymarket'),
+#          'USER': os.getenv('DB_USER', 'skymarket'),
+#          'PASSWORD': os.getenv('DB_PASSWORD', 'skymarket'),
+#          'HOST': os.getenv('DB_HOST', 'localhost'),
+#          'PORT': os.getenv('DB_PORT', '5432'),}
+#  }
 DATABASES = {
-        'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.postgresql'),
-        'NAME': os.getenv('DB_NAME', 'skymarket'),
-        'USER': os.getenv('DB_USER', 'skymarket'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'skymarket'),
-        'HOST': os.getenv('DB_HOST', 'localhost'),
-        'PORT': os.getenv('DB_PORT', '5432'),
+    'default':{
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': BASE_DIR / 'db.sqlite3',}
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

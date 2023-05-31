@@ -1,7 +1,7 @@
 from django.db import models
 
-from skymarket.ads.ad.models import Ad
-from skymarket.users.models import User
+from ads.ad.models import Ad
+from users.models import User
 
 
 

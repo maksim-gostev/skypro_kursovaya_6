@@ -3,11 +3,11 @@ from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.shortcuts import get_object_or_404
 
-from skymarket.ads.ad.models import Ad
-from skymarket.ads.ad.serializers import AdSerializer, AdDetailSerializer
-from skymarket.ads.comment.models import Comment
-from skymarket.ads.comment.serializers import CommentSerializer
-from skymarket.ads.permissions import IsOwner, IsAdmin
+from ads.ad.models import Ad
+from ads.ad.serializers import AdSerializer, AdDetailSerializer
+from ads.comment.models import Comment
+from ads.comment.serializers import CommentSerializer
+from ads.permissions import IsOwner, IsAdmin
 
 
 class AdPagination(pagination.PageNumberPagination):

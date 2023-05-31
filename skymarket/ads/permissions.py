@@ -1,6 +1,6 @@
 from rest_framework.permissions import BasePermission
 
-from skymarket.users.models import UserRoles
+from users.models import UserRoles
 
 
 class IsAdmin(BasePermission):
